@@ -1,1 +1,475 @@
-aaaaaaaaaaaaaaaaaa
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohammad Akhoundi Anduhjerdi — CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAF8F4;
+    --ink:#1C1B19;
+    --ink-soft:#4A4640;
+    --muted:#84796B;
+    --rule:#DDD5C7;
+    --accent:#2E4234;
+    --accent-soft:#5B7062;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-font-smoothing:antialiased;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+  }
+  .page{
+    max-width:760px;
+    margin:0 auto;
+    padding:72px 32px 96px;
+  }
+
+  /* Header */
+  header{
+    margin-bottom:56px;
+  }
+  h1{
+    font-family:'Source Serif 4', serif;
+    font-weight:600;
+    font-size:2.6rem;
+    line-height:1.1;
+    margin:0 0 14px;
+    letter-spacing:-0.01em;
+  }
+  .contact{
+    display:flex;
+    flex-wrap:wrap;
+    gap:4px 18px;
+    font-size:0.92rem;
+    color:var(--ink-soft);
+  }
+  .contact a{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px solid transparent;
+  }
+  .contact a:hover, .contact a:focus-visible{
+    border-bottom-color:var(--accent);
+  }
+  .contact span::after{
+    content:"·";
+    margin-left:18px;
+    color:var(--rule);
+  }
+  .contact span:last-child::after{content:none;}
+
+  /* Sections */
+  section{
+    margin-bottom:44px;
+  }
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:16px;
+    margin-bottom:20px;
+  }
+  .section-head h2{
+    font-family:'Source Serif 4', serif;
+    font-weight:600;
+    font-size:1.3rem;
+    margin:0;
+    white-space:nowrap;
+  }
+  .section-head .line{
+    flex:1;
+    height:1px;
+    background:var(--rule);
+  }
+
+  /* Research interests */
+  .interests{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px 24px;
+  }
+  .interests li{
+    position:relative;
+    padding-left:18px;
+    color:var(--ink-soft);
+  }
+  .interests li::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0.6em;
+    width:6px;
+    height:6px;
+    background:var(--accent-soft);
+    border-radius:50%;
+  }
+
+  /* Entries (education / experience) */
+  .entry{
+    display:grid;
+    grid-template-columns:118px 1fr;
+    gap:4px 24px;
+    margin-bottom:22px;
+  }
+  .entry:last-child{margin-bottom:0;}
+  .entry .when{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.8rem;
+    color:var(--muted);
+    padding-top:3px;
+  }
+  .entry .what h3{
+    font-family:'Source Serif 4', serif;
+    font-weight:600;
+    font-size:1.05rem;
+    margin:0 0 2px;
+  }
+  .entry .what .org{
+    font-size:0.92rem;
+    color:var(--accent-soft);
+    font-weight:500;
+    margin-bottom:6px;
+  }
+  .entry .what p{
+    margin:0;
+    color:var(--ink-soft);
+    font-size:0.95rem;
+  }
+  .entry .what .meta{
+    font-size:0.85rem;
+    color:var(--muted);
+    margin-top:6px;
+  }
+
+  /* Skills */
+  .skills{
+    display:grid;
+    grid-template-columns:140px 1fr;
+    row-gap:10px;
+    font-size:0.95rem;
+  }
+  .skills dt{
+    color:var(--muted);
+    font-size:0.82rem;
+    text-transform:none;
+    padding-top:2px;
+  }
+  .skills dd{
+    margin:0;
+    color:var(--ink-soft);
+  }
+
+  /* Awards */
+  .awards{
+    margin:0;
+    padding-left:0;
+    list-style:none;
+  }
+  .awards li{
+    position:relative;
+    padding-left:18px;
+    margin-bottom:9px;
+    color:var(--ink-soft);
+    font-size:0.95rem;
+  }
+  .awards li::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0.55em;
+    width:6px;
+    height:6px;
+    background:var(--accent-soft);
+    border-radius:50%;
+  }
+
+  /* Courses */
+  .course-groups{
+    display:grid;
+    gap:28px;
+  }
+  .course-groups h3{
+    font-family:'Source Serif 4', serif;
+    font-size:0.98rem;
+    font-weight:600;
+    margin:0 0 12px;
+    color:var(--ink);
+  }
+  table.courses{
+    width:100%;
+    border-collapse:collapse;
+    font-size:0.9rem;
+  }
+  table.courses td{
+    padding:6px 10px 6px 0;
+    border-bottom:1px solid var(--rule);
+    color:var(--ink-soft);
+  }
+  table.courses td.grade{
+    text-align:right;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.82rem;
+    color:var(--ink);
+    white-space:nowrap;
+    padding-right:0;
+  }
+
+  /* References */
+  .refs{
+    display:grid;
+    gap:18px;
+  }
+  .ref h3{
+    font-family:'Source Serif 4', serif;
+    font-size:1rem;
+    font-weight:600;
+    margin:0 0 2px;
+  }
+  .ref .role{
+    font-size:0.88rem;
+    color:var(--accent-soft);
+    margin-bottom:2px;
+  }
+  .ref .dept{
+    font-size:0.88rem;
+    color:var(--muted);
+    margin-bottom:2px;
+  }
+  .ref a{
+    font-size:0.88rem;
+    color:var(--accent);
+    text-decoration:none;
+  }
+  .ref a:hover, .ref a:focus-visible{text-decoration:underline;}
+
+  footer{
+    margin-top:64px;
+    padding-top:20px;
+    border-top:1px solid var(--rule);
+    font-size:0.8rem;
+    color:var(--muted);
+  }
+
+  @media (max-width: 620px){
+    .page{padding:48px 20px 72px;}
+    h1{font-size:2rem;}
+    .interests{grid-template-columns:1fr;}
+    .entry{grid-template-columns:1fr;}
+    .entry .when{padding-top:0;margin-bottom:2px;}
+    .skills{grid-template-columns:110px 1fr;}
+    .course-groups{grid-template-columns:1fr !important;}
+  }
+
+  @media print{
+    body{background:#fff;}
+    .page{padding:24px;max-width:100%;}
+    a{color:var(--ink) !important;}
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    .page{animation:rise 0.5s ease-out;}
+    @keyframes rise{
+      from{opacity:0; transform:translateY(8px);}
+      to{opacity:1; transform:translateY(0);}
+    }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <h1>Mohammad Akhoundi Anduhjerdi</h1>
+    <div class="contact">
+      <span><a href="mailto:mohammad.akhoundi@iau.ir">mohammad.akhoundi@iau.ir</a></span>
+      <span>+98 913 841 9797</span>
+      <span><a href="https://github.com/mohammadakhoundi1">github.com/mohammadakhoundi1</a></span>
+      <span><a href="https://linkedin.com/in/mohammad-akhoundi">linkedin.com/in/mohammad-akhoundi</a></span>
+      <span>Iran</span>
+    </div>
+  </header>
+
+  <section id="interests">
+    <div class="section-head"><h2>Research Interests</h2><div class="line"></div></div>
+    <ul class="interests">
+      <li>Hallucination mitigation in LLMs</li>
+      <li>Mechanistic interpretability of large language models</li>
+      <li>AI truthfulness</li>
+      <li>AI trustworthiness</li>
+    </ul>
+  </section>
+
+  <section id="education">
+    <div class="section-head"><h2>Education</h2><div class="line"></div></div>
+
+    <div class="entry">
+      <div class="when">2024 – Present</div>
+      <div class="what">
+        <h3>M.Sc., Artificial Intelligence</h3>
+        <div class="org">Islamic Azad University, Kerman, Iran</div>
+        <p>Thesis (in progress): "Mitigating Hallucination in Large Language Models via Attention Heads." Supervisor: Prof. Mehdi Jafari. Expected completion: January 2027.</p>
+        <div class="meta">GPA: 19.56 / 20 (≈1.2, German scale)</div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">2022 – 2024</div>
+      <div class="what">
+        <h3>M.Sc., Information Technology <span style="color:var(--muted); font-weight:400;">(discontinued)</span></h3>
+        <div class="org">Pardis University of Tehran, Iran</div>
+        <div class="meta">Partial GPA: 17.54 / 20 (≈1.9, German scale)</div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">2016 – 2022</div>
+      <div class="what">
+        <h3>B.Sc., Software Engineering</h3>
+        <div class="org">Shahid Bahonar University of Kerman, Iran</div>
+        <p>Thesis: "Football Player Robot with Real-Time Image Processing and Android Platform for Selling Second-Hand Books." Supervisor: Prof. Vahid Jamshidi.</p>
+        <div class="meta">GPA: 13.67 / 20 (≈3.4, German scale)</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="section-head"><h2>Professional Experience</h2><div class="line"></div></div>
+
+    <div class="entry">
+      <div class="when">2024 – Present</div>
+      <div class="what">
+        <h3>Teaching Assistant — Machine Learning, LLMs</h3>
+        <div class="org">Azad University of Kerman</div>
+        <p>Teach machine learning and LLMs in Python and design mini-projects for master's students.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">2024 – 2025</div>
+      <div class="what">
+        <h3>Full-Stack Developer (Sole Contributor)</h3>
+        <div class="org">Etemad Padidar Atiyeh Company — AI-Powered Educational Management Platform</div>
+        <p>Independently architected and built the entire system: a FastAPI/SQLAlchemy backend with JWT authentication, a SvelteKit frontend, and a LangChain-based LLM integration with a retrieval-augmented layer for course content and pedagogical guidance.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">2021 – 2022</div>
+      <div class="what">
+        <h3>Teaching Assistant — Robotics Laboratory</h3>
+        <div class="org">Shahid Bahonar University of Kerman</div>
+        <p>Assisted bachelor's students with ARM32 programming, PCB design, image processing, OV7670 camera interfacing, and NRF24L01-based wireless communication for robotics projects.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-head"><h2>Skills</h2><div class="line"></div></div>
+    <dl class="skills">
+      <dt>Languages</dt>
+      <dd>Persian (native), English (fluent), German (basic)</dd>
+      <dt>Coding</dt>
+      <dd>Python, PyTorch, Svelte, MySQL, HTML, CSS, JavaScript, XML</dd>
+      <dt>Libraries</dt>
+      <dd>NumPy, Pandas, Matplotlib, Scikit-learn</dd>
+    </dl>
+  </section>
+
+  <section id="awards">
+    <div class="section-head"><h2>Awards &amp; Honors</h2><div class="line"></div></div>
+    <ul class="awards">
+      <li>Ranked 1st among master's students of Artificial Intelligence</li>
+      <li>Ranked in the top 30% nationwide in the university entrance exam (KONKOOR)</li>
+      <li>Top student in ARM32 chipset programming</li>
+      <li>Ranked 1st in bachelor's robotics group</li>
+    </ul>
+  </section>
+
+  <section id="courses">
+    <div class="section-head"><h2>Coursework</h2><div class="line"></div></div>
+    <div class="course-groups" style="grid-template-columns:1fr 1fr;">
+      <div>
+        <h3>M.Sc., Artificial Intelligence</h3>
+        <table class="courses">
+          <tr><td>Machine Learning</td><td class="grade">19.75/20</td></tr>
+          <tr><td>Special Topics in AI &amp; Robotics</td><td class="grade">20/20</td></tr>
+          <tr><td>Natural Language Processing</td><td class="grade">18/20</td></tr>
+          <tr><td>Big Data Analysis</td><td class="grade">20/20</td></tr>
+          <tr><td>Neural Computing &amp; Deep Learning</td><td class="grade">20/20</td></tr>
+          <tr><td>Research Methodology</td><td class="grade">18/20</td></tr>
+          <tr><td>Digital Image Processing</td><td class="grade">19.75/20</td></tr>
+          <tr><td>Evolutionary Computation</td><td class="grade">20/20</td></tr>
+          <tr><td>Convex Optimization</td><td class="grade">20/20</td></tr>
+          <tr><td>Seminar</td><td class="grade">20/20</td></tr>
+        </table>
+      </div>
+      <div>
+        <h3>B.Sc., Software Engineering</h3>
+        <table class="courses">
+          <tr><td>Social Network</td><td class="grade">18/20</td></tr>
+          <tr><td>Info. Security Mgmt. System</td><td class="grade">20/20</td></tr>
+          <tr><td>Signal and Systems</td><td class="grade">16/20</td></tr>
+          <tr><td>Theory of Language &amp; Machines</td><td class="grade">19.44/20</td></tr>
+          <tr><td>Bachelor's Project</td><td class="grade">16/20</td></tr>
+          <tr><td>Data Structure</td><td class="grade">17.5/20</td></tr>
+          <tr><td>Technical English</td><td class="grade">18.25/20</td></tr>
+          <tr><td>Operating System Lab</td><td class="grade">18.5/20</td></tr>
+          <tr><td>Software Engineering</td><td class="grade">15/20</td></tr>
+          <tr><td>Algorithm Design</td><td class="grade">15.5/20</td></tr>
+          <tr><td>Microprocessor &amp; Assembly</td><td class="grade">16.75/20</td></tr>
+          <tr><td>Software Engineering Lab</td><td class="grade">19/20</td></tr>
+          <tr><td>Foreign Language</td><td class="grade">17/20</td></tr>
+          <tr><td>Logical Circuits &amp; Comp. Arch. Lab</td><td class="grade">18/20</td></tr>
+          <tr><td>Object-Oriented Systems Design</td><td class="grade">14.1/20</td></tr>
+          <tr><td>Fundamentals of Secure Computing</td><td class="grade">19.25/20</td></tr>
+          <tr><td>Computer Workshop</td><td class="grade">19.5/20</td></tr>
+          <tr><td>Fundamentals of IT</td><td class="grade">16.25/20</td></tr>
+          <tr><td>Engineering Economics</td><td class="grade">15/20</td></tr>
+          <tr><td>Computer Networks Security</td><td class="grade">15.8/20</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="references">
+    <div class="section-head"><h2>References</h2><div class="line"></div></div>
+    <div class="refs">
+      <div class="ref">
+        <h3>Mehdi Jafari Shahbazzadeh</h3>
+        <div class="role">Assistant Professor</div>
+        <div class="dept">Dept. of Computer Science, Kerman Branch, Islamic Azad University of Kerman</div>
+        <a href="mailto:m.jafarishahbazzadeh@iau.ac.ir">m.jafarishahbazzadeh@iau.ac.ir</a>
+      </div>
+      <div class="ref">
+        <h3>Mohammad Ahmadinia</h3>
+        <div class="role">Assistant Professor</div>
+        <div class="dept">Dept. of Computer Science, Kerman Branch, Islamic Azad University of Kerman</div>
+        <a href="mailto:ahmadinia@gmail.com">ahmadinia@gmail.com</a>
+      </div>
+      <div class="ref">
+        <h3>Vahid Jamshidi</h3>
+        <div class="role">Assistant Professor</div>
+        <div class="dept">Dept. of Computer Engineering, Bahonar University of Kerman</div>
+        <a href="mailto:vjamshidi@uk.ac.ir">vjamshidi@uk.ac.ir</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Last updated September 2026.
+  </footer>
+
+</div>
+</body>
+</html>
